@@ -37,29 +37,19 @@
     .container { width: min(1160px, 92%); margin: 0 auto; }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(10px);
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 78px;
-      gap: 18px;
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 78px; gap: 18px;
     }
 
     .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      font-size: 1.06rem;
+      display: inline-flex; align-items: center; gap: 12px;
+      font-weight: 900; letter-spacing: -0.04em; font-size: 1.06rem;
     }
 
     .logo {
@@ -78,15 +68,13 @@
     nav a:hover { color: var(--teal); }
 
     .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      gap: 8px; border: none; border-radius: 999px;
-      padding: 14px 22px; font-weight: 800; cursor: pointer;
-      transition: 0.2s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border: none; border-radius: 999px; padding: 14px 22px; font-weight: 800; cursor: pointer; transition: 0.2s ease;
     }
     .btn:hover { transform: translateY(-1px); }
     .btn-primary {
-      background: linear-gradient(135deg, var(--teal), var(--teal-deep));
-      color: var(--white); box-shadow: 0 10px 20px rgba(10, 127, 138, 0.25);
+      background: linear-gradient(135deg, var(--teal), var(--teal-deep)); color: var(--white);
+      box-shadow: 0 10px 20px rgba(10, 127, 138, 0.25);
     }
     .btn-light { background: #def7fb; color: var(--teal-deep); }
 
@@ -131,84 +119,56 @@
     .section { padding: 82px 0; }
     .section-soft { background: var(--paper); }
     .section-head { max-width: 760px; margin: 0 auto 38px; text-align: center; }
-    .section-head h2 {
-      margin: 0 0 12px; font-size: clamp(2rem, 3vw, 3rem); line-height: 1.1; letter-spacing: -0.05em;
-    }
+    .section-head h2 { margin: 0 0 12px; font-size: clamp(2rem, 3vw, 3rem); line-height: 1.1; letter-spacing: -0.05em; }
     .section-head p { margin: 0; color: var(--muted); font-size: 1.02rem; }
 
-    .stats {
-      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 14px;
-    }
-    .stat {
-      background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 24px 20px; text-align: center; box-shadow: 0 10px 25px rgba(17, 24, 29, 0.04);
-    }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 14px; }
+    .stat { background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 24px 20px; text-align: center; box-shadow: 0 10px 25px rgba(17, 24, 29, 0.04); }
     .stat strong { display: block; font-size: clamp(1.6rem, 2vw, 2.1rem); letter-spacing: -0.05em; color: var(--teal); }
     .stat span { display: block; margin-top: 6px; color: var(--muted); font-weight: 700; }
 
     .services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-    .service {
-      background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 24px 22px; transition: 0.22s ease;
-    }
+    .service { background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 24px 22px; transition: 0.22s ease; }
     .service:hover { transform: translateY(-4px); box-shadow: 0 18px 34px rgba(17, 24, 29, 0.08); border-color: #cfeaec; }
-    .service-icon {
-      width: 58px; height: 58px; border-radius: 18px; background: #e4f8fb; display: grid; place-items: center; font-size: 1.7rem; margin-bottom: 18px;
-    }
+    .service-icon { width: 58px; height: 58px; border-radius: 18px; background: #e4f8fb; display: grid; place-items: center; font-size: 1.7rem; margin-bottom: 18px; }
     .service h3 { margin: 0 0 8px; font-size: 1.18rem; }
     .service p { margin: 0; color: var(--muted); font-size: 0.96rem; }
 
     .about-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 28px; align-items: center; }
-    .about-card {
-      background: var(--white); border: 1px solid var(--line); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow);
-    }
+    .about-card { background: var(--white); border: 1px solid var(--line); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow); }
     .about-card img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; }
     .about-copy { padding: 8px 0; }
     .about-copy h3 { font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -0.05em; margin: 0 0 14px; }
     .about-copy p { margin: 0 0 18px; color: var(--muted); font-size: 1rem; }
     .check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
     .check-list li { display: flex; align-items: flex-start; gap: 12px; color: var(--ink-soft); font-weight: 700; }
-    .check-icon {
-      width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: #dffaf0; color: #157a54; font-size: 0.82rem; flex-shrink: 0; margin-top: 2px;
-    }
+    .check-icon { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: #dffaf0; color: #157a54; font-size: 0.82rem; flex-shrink: 0; margin-top: 2px; }
 
     .portfolio-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 22px; }
-    .feature-card {
-      position: relative; border-radius: 26px; overflow: hidden; background: #17272d; min-height: 430px; box-shadow: var(--shadow);
-    }
+    .feature-card { position: relative; border-radius: 26px; overflow: hidden; background: #17272d; min-height: 430px; box-shadow: var(--shadow); }
     .feature-card img { width: 100%; height: 100%; min-height: 430px; object-fit: cover; }
-    .feature-badge {
-      position: absolute; left: 18px; bottom: 18px; background: rgba(255,255,255,0.95); color: var(--ink); padding: 10px 14px; border-radius: 12px; font-weight: 800;
-    }
+    .feature-badge { position: absolute; left: 18px; bottom: 18px; background: rgba(255,255,255,0.95); color: var(--ink); padding: 10px 14px; border-radius: 12px; font-weight: 800; }
     .mini-grid { display: grid; gap: 22px; }
-    .mini-card {
-      min-height: 204px; border-radius: 26px; padding: 28px; color: var(--white); display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(135deg, #1a2a36, #0c7582); box-shadow: var(--shadow);
-    }
+    .mini-card { min-height: 204px; border-radius: 26px; padding: 28px; color: var(--white); display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(135deg, #1a2a36, #0c7582); box-shadow: var(--shadow); }
     .mini-card:nth-child(2) { background: linear-gradient(135deg, #2a2c33, #8a6a0e); }
     .mini-card h3 { margin: 0 0 8px; font-size: clamp(1.5rem, 2vw, 2rem); letter-spacing: -0.04em; }
     .mini-card p { margin: 0; color: rgba(255,255,255,0.8); }
 
     .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
-    .step {
-      background: var(--white); border-top: 4px solid var(--gold); border-radius: 0 0 20px 20px; padding: 26px 24px; box-shadow: 0 12px 24px rgba(15, 23, 32, 0.05);
-    }
+    .step { background: var(--white); border-top: 4px solid var(--gold); border-radius: 0 0 20px 20px; padding: 26px 24px; box-shadow: 0 12px 24px rgba(15, 23, 32, 0.05); }
     .step b { color: var(--teal); font-size: 2.1rem; line-height: 1; letter-spacing: -0.05em; }
     .step h3 { margin: 12px 0 8px; font-size: 1.2rem; }
     .step p { margin: 0; color: var(--muted); }
 
     .testimonials { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
-    .quote {
-      background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 24px 22px; box-shadow: 0 10px 22px rgba(17, 24, 29, 0.04);
-    }
+    .quote { background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 24px 22px; box-shadow: 0 10px 22px rgba(17, 24, 29, 0.04); }
     .quote p { margin: 0 0 18px; color: var(--ink-soft); font-size: 1rem; }
     .author { display: flex; align-items: center; gap: 12px; }
-    .avatar {
-      width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #ffd863); display: grid; place-items: center; font-weight: 900; color: var(--ink);
-    }
+    .avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #ffd863); display: grid; place-items: center; font-weight: 900; color: var(--ink); }
     .author strong { display: block; font-size: 0.96rem; }
     .author small { color: var(--muted); }
 
-    .cta-wrap {
-      display: flex; justify-content: space-between; align-items: center; gap: 24px; background: #101b22; border-radius: 30px; padding: 36px 40px; color: var(--white); box-shadow: var(--shadow);
-    }
+    .cta-wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; background: #101b22; border-radius: 30px; padding: 36px 40px; color: var(--white); box-shadow: var(--shadow); }
     .cta-wrap h2 { margin: 0 0 8px; letter-spacing: -0.05em; font-size: clamp(1.8rem, 3vw, 2.8rem); }
     .cta-wrap p { margin: 0; color: #cfe0e6; }
 
@@ -219,15 +179,11 @@
     .contact-line { padding: 15px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
     .contact-line strong { display: block; color: var(--ink); margin-bottom: 5px; }
 
-    form {
-      background: var(--white); border: 1px solid var(--line); border-radius: 26px; padding: 26px; box-shadow: 0 16px 30px rgba(17, 24, 29, 0.05);
-    }
+    form { background: var(--white); border: 1px solid var(--line); border-radius: 26px; padding: 26px; box-shadow: 0 16px 30px rgba(17, 24, 29, 0.05); }
     form h3 { margin: 0 0 20px; font-size: 1.5rem; letter-spacing: -0.04em; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     label { display: block; font-size: 0.85rem; font-weight: 800; margin-bottom: 7px; color: var(--ink-soft); }
-    input, select, textarea {
-      width: 100%; margin-bottom: 16px; padding: 13px 14px; border: 1px solid #dbe5ea; border-radius: 12px; background: #fbfdfe; color: var(--ink);
-    }
+    input, select, textarea { width: 100%; margin-bottom: 16px; padding: 13px 14px; border: 1px solid #dbe5ea; border-radius: 12px; background: #fbfdfe; color: var(--ink); }
     textarea { min-height: 128px; resize: vertical; }
 
     footer { background: #0a1217; color: #dfeaf0; padding: 22px 0; }
@@ -296,7 +252,7 @@
         </div>
 
         <div class="hero-visual">
-          <img src="assets/portfolio-sign.svg" alt="J.K SignMaker'S signage portfolio showcase" onerror="this.style.display='none'" />
+          <img src="assets/portfolio-profile.svg" alt="J.K SignMaker'S signage portfolio showcase" onerror="this.style.display='none'" />
           <div class="floating-card">
             <div>
               <strong>Brand visibility that sells.</strong>
@@ -340,7 +296,7 @@
     <section class="section section-soft" id="about">
       <div class="container about-grid">
         <div class="about-card">
-          <img src="assets/portfolio-sign.svg" alt="Custom signage fabrication by J.K SignMaker'S" />
+          <img src="assets/portfolio-profile.svg" alt="Custom signage fabrication by J.K SignMaker'S" />
         </div>
 
         <div class="about-copy">
@@ -364,7 +320,7 @@
 
         <div class="portfolio-grid">
           <div class="feature-card">
-            <img src="assets/portfolio-sign.svg" alt="Storefront branding and custom sign project" />
+            <img src="assets/portfolio-profile.svg" alt="Storefront branding and custom sign project" />
             <div class="feature-badge">Storefront & Brand Signage</div>
           </div>
 
