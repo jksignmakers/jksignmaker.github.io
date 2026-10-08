@@ -7,18 +7,22 @@
     </linearGradient>
   </defs>
 
-  <rect width="1200" height="900" fill="#f4f4f4"/>
+  <rect width="1200" height="900" fill="#f3f3f3"/>
 
-  <g transform="translate(600 450)">
-    <circle r="430" fill="#0d1419" stroke="url(#gold)" stroke-width="36"/>
+  <g transform="translate(600 440)">
+    <!-- Outer yellow ring -->
+    <circle r="430" fill="#0d1419" stroke="url(#gold)" stroke-width="38"/>
 
-    <text x="0" y="-30" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="270" font-weight="900" fill="#f4f4f4" letter-spacing="-12">JK</text>
+    <!-- Main JK letters -->
+    <text x="0" y="-30" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="250" font-weight="900" fill="#f4f4f4" letter-spacing="-12">JK</text>
 
-    <text x="0" y="170" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="118" font-weight="900" fill="#f4f4f4" letter-spacing="-3">SignMaker&apos;S</text>
+    <!-- Brand text -->
+    <text x="0" y="160" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="118" font-weight="900" fill="#f4f4f4" letter-spacing="-3">SignMaker&apos;S</text>
 
-    <path d="M -200 215 L 195 215" stroke="url(#gold)" stroke-width="16" stroke-linecap="round"/>
-    <path d="M -120 230 Q 0 175 120 230" fill="none" stroke="url(#gold)" stroke-width="16" stroke-linecap="round"/>
+    <!-- Gold underline -->
+    <path d="M -210 205 L 210 205" stroke="url(#gold)" stroke-width="16" stroke-linecap="round"/>
 
-    <text x="0" y="265" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#f4f4f4" letter-spacing="2">YOUR SIGN. YOUR BRAND. OUR CRAFT.</text>
+    <!-- Tagline -->
+    <text x="0" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#f4f4f4" letter-spacing="2">YOUR SIGN. YOUR BRAND. OUR CRAFT.</text>
   </g>
 </svg>
