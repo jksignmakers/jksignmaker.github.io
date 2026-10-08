@@ -1,0 +1,36 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0%" stop-color="#eff1ee"/>
+      <stop offset="100%" stop-color="#dfe4df"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f6d7a7"/>
+      <stop offset="35%" stop-color="#d9a95d"/>
+      <stop offset="100%" stop-color="#f8d89a"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#f7dca7" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="22" flood-color="#f7dca7" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <g transform="translate(100 70)">
+    <rect x="0" y="0" width="1020" height="620" rx="26" fill="#24363f" opacity="0.95"/>
+    <rect x="0" y="0" width="1020" height="620" rx="26" fill="none" stroke="#0f1d25" stroke-width="10"/>
+
+    <g filter="url(#glow)">
+      <path d="M180 410 C 250 200, 490 130, 650 250 C 770 340, 850 390, 910 430" fill="none" stroke="url(#gold)" stroke-width="26" stroke-linecap="round"/>
+      <path d="M125 405 C 210 280, 370 215, 470 245 C 545 270, 595 330, 640 390" fill="none" stroke="url(#gold)" stroke-width="24" stroke-linecap="round" opacity="0.8"/>
+      <text x="530" y="390" text-anchor="middle" font-size="170" font-weight="700" fill="url(#gold)" font-style="italic" font-family="Segoe Print, Brush Script MT, cursive" letter-spacing="-6">J.K</text>
+      <text x="545" y="500" text-anchor="middle" font-size="120" font-weight="700" fill="#f1f4f6" font-family="Segoe UI, Arial, sans-serif" letter-spacing="8">SIGNMAKER'S</text>
+    </g>
+
+    <g opacity="0.85">
+      <rect x="110" y="70" width="24" height="120" fill="#f4d29c"/> 
+      <rect x="136" y="90" width="10" height="100" fill="#f4d29c" opacity="0.8"/>
+    </g>
+  </g>
+</svg>
