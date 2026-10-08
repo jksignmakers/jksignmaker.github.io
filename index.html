@@ -413,5 +413,26 @@
       <small>Custom signage • Acrylic letters • Lighted signs</small>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('quoteForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim() || 'Customer';
+      const phone = document.getElementById('phone').value.trim();
+      const type = document.getElementById('type').value;
+      const details = document.getElementById('details').value.trim();
+
+      const subject = encodeURIComponent('Signage Quotation Inquiry - ' + name);
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Contact Number: ' + (phone || 'Not provided') + '\n' +
+        'Signage Type: ' + type + '\n\n' +
+        'Project Details:\n' + (details || 'No additional details provided.')
+      );
+
+      window.location.href = 'mailto:j.ksignmakers@gmail.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
 </body>
 </html>
