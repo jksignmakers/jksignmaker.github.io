@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="J.K SignMaker'S custom sign fabrication and branding portfolio" />
+  <meta name="description" content="J.K SignMaker'S — custom signage portfolio, signage fabrication, acrylic letters, lighted signs, storefront branding, and custom displays for businesses in Metro Manila." />
   <title>J.K SignMaker'S | Portfolio & Signage Studio</title>
   <style>
     :root {
-      --ink: #14232b;
-      --ink-soft: #29414d;
+      --ink: #0f1720;
+      --ink-soft: #22323d;
       --muted: #5e7080;
-      --line: #dde6eb;
-      --paper: #f4f7f8;
+      --line: #e5edf1;
+      --paper: #f5f8fa;
       --white: #ffffff;
       --teal: #0a7f8a;
       --teal-deep: #065d69;
-      --gold: #d8a450;
-      --gold-soft: #f8e2b0;
-      --shadow: 0 18px 50px rgba(15, 23, 32, 0.14);
-      --radius: 26px;
+      --gold: #f4b42a;
+      --gold-soft: #fff2ca;
+      --shadow: 0 18px 50px rgba(15, 23, 32, 0.12);
+      --radius: 24px;
     }
 
     * { box-sizing: border-box; }
@@ -27,321 +27,294 @@
       margin: 0;
       font-family: Inter, Arial, Helvetica, sans-serif;
       color: var(--ink);
-      background: #ffffff;
+      background: var(--white);
       line-height: 1.6;
     }
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
 
-    .container {
-      width: min(1180px, 92%);
-      margin: 0 auto;
+    .container { width: min(1160px, 92%); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
     }
 
-    .hero {
-      background: linear-gradient(135deg, #f5f8f9 0%, #ffffff 40%, #eef5f6 100%);
-      padding: 68px 0 54px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      align-items: center;
-      gap: 42px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #fdf0cf;
-      color: #7d5a0d;
-      font-size: 0.8rem;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 20px 0 12px;
-      font-size: clamp(2.7rem, 5vw, 4.8rem);
-      line-height: 1.04;
-      letter-spacing: -0.06em;
-    }
-    h1 span { color: var(--teal); }
-
-    .hero-copy p {
-      max-width: 560px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-
-    .hero-actions {
+    .nav {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+      gap: 18px;
     }
 
-    .btn {
+    .brand {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 800;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 1.06rem;
+    }
+
+    .logo {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: #11181d; color: var(--white);
+      display: grid; place-items: center;
+      font-size: 1.1rem; border: 2px solid var(--gold);
+      box-shadow: 0 0 0 4px #fff;
+    }
+    .logo span { color: var(--gold); }
+
+    nav {
+      display: flex; align-items: center; gap: 28px;
+      font-size: 0.94rem; font-weight: 700; color: var(--ink-soft);
+    }
+    nav a:hover { color: var(--teal); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; border: none; border-radius: 999px;
+      padding: 14px 22px; font-weight: 800; cursor: pointer;
       transition: 0.2s ease;
     }
     .btn:hover { transform: translateY(-1px); }
     .btn-primary {
       background: linear-gradient(135deg, var(--teal), var(--teal-deep));
-      color: #fff;
-      box-shadow: 0 10px 18px rgba(10, 127, 138, 0.2);
+      color: var(--white); box-shadow: 0 10px 20px rgba(10, 127, 138, 0.25);
     }
-    .btn-light {
-      background: #def7fb;
-      color: var(--teal-deep);
+    .btn-light { background: #def7fb; color: var(--teal-deep); }
+
+    .menu-toggle { display: none; border: 0; background: transparent; font-size: 1.9rem; cursor: pointer; }
+
+    .hero {
+      background: radial-gradient(circle at top right, rgba(13,127,138,0.10), transparent 28%), linear-gradient(135deg, #f6fbfc 0%, #ffffff 55%, #f4f7f9 100%);
+      padding: 72px 0 68px;
     }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.08fr 0.92fr; align-items: center; gap: 54px;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+      background: var(--gold-soft); color: #7b5b09; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    h1 {
+      margin: 20px 0 12px; font-size: clamp(2.7rem, 5vw, 4.8rem); line-height: 1.02; letter-spacing: -0.06em;
+    }
+    h1 span { color: var(--teal); }
+    .hero-copy p { max-width: 580px; font-size: 1.08rem; color: var(--muted); margin: 0; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .trust-row {
+      display: flex; flex-wrap: wrap; gap: 18px 30px; margin-top: 26px; color: var(--ink-soft); font-weight: 700; font-size: 0.94rem;
+    }
+    .trust-row span { opacity: 0.85; }
 
     .hero-visual {
-      position: relative;
-      border-radius: 30px;
-      overflow: hidden;
-      background: linear-gradient(135deg, #101e25, #1a313d);
+      position: relative; min-height: 420px; border-radius: 30px; overflow: hidden; background: linear-gradient(135deg, #0f1c24, #143b47);
       box-shadow: var(--shadow);
-      min-height: 480px;
     }
-
     .hero-visual img {
-      width: 100%;
-      height: 100%;
-      min-height: 480px;
-      object-fit: cover;
+      width: 100%; height: 100%; min-height: 420px; object-fit: cover; filter: saturate(1.05) contrast(1.05);
     }
-
     .floating-card {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.96);
-      box-shadow: 0 16px 28px rgba(17, 24, 29, 0.12);
+      position: absolute; left: 18px; right: 18px; bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 18px 20px; border-radius: 18px; background: rgba(255,255,255,0.96); box-shadow: 0 18px 30px rgba(17, 24, 29, 0.12);
     }
-    .floating-card strong { display: block; font-size: 1.04rem; }
-    .floating-card small { display: block; color: var(--muted); }
+    .floating-card strong { display: block; font-size: 1.06rem; }
+    .floating-card small { color: var(--muted); display: block; margin-top: 3px; }
 
-    .section {
-      padding: 72px 0;
-    }
-
-    .section-soft {
-      background: var(--paper);
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 32px;
-    }
+    .section { padding: 82px 0; }
+    .section-soft { background: var(--paper); }
+    .section-head { max-width: 760px; margin: 0 auto 38px; text-align: center; }
     .section-head h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 3vw, 3rem);
-      letter-spacing: -0.05em;
+      margin: 0 0 12px; font-size: clamp(2rem, 3vw, 3rem); line-height: 1.1; letter-spacing: -0.05em;
     }
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-    }
+    .section-head p { margin: 0; color: var(--muted); font-size: 1.02rem; }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+    .stats {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 14px;
     }
+    .stat {
+      background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 24px 20px; text-align: center; box-shadow: 0 10px 25px rgba(17, 24, 29, 0.04);
+    }
+    .stat strong { display: block; font-size: clamp(1.6rem, 2vw, 2.1rem); letter-spacing: -0.05em; color: var(--teal); }
+    .stat span { display: block; margin-top: 6px; color: var(--muted); font-weight: 700; }
 
+    .services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     .service {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px 22px;
-      box-shadow: 0 10px 20px rgba(17,24,29,0.04);
+      background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 24px 22px; transition: 0.22s ease;
     }
+    .service:hover { transform: translateY(-4px); box-shadow: 0 18px 34px rgba(17, 24, 29, 0.08); border-color: #cfeaec; }
     .service-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
-      background: #eaf8fb;
-      display: grid;
-      place-items: center;
-      font-size: 1.7rem;
-      margin-bottom: 16px;
+      width: 58px; height: 58px; border-radius: 18px; background: #e4f8fb; display: grid; place-items: center; font-size: 1.7rem; margin-bottom: 18px;
     }
-    .service h3 { margin: 0 0 8px; font-size: 1.15rem; }
-    .service p { margin: 0; color: var(--muted); }
+    .service h3 { margin: 0 0 8px; font-size: 1.18rem; }
+    .service p { margin: 0; color: var(--muted); font-size: 0.96rem; }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 26px;
-      align-items: center;
-    }
-
+    .about-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 28px; align-items: center; }
     .about-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
+      background: var(--white); border: 1px solid var(--line); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow);
     }
-    .about-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      object-fit: cover;
-    }
-
-    .about-copy h3 {
-      margin: 0 0 16px;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      letter-spacing: -0.05em;
-    }
-    .about-copy p {
-      margin: 0 0 18px;
-      color: var(--muted);
-    }
-
-    .check-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 12px;
-    }
-    .check-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      color: var(--ink-soft);
-      font-weight: 700;
-    }
+    .about-card img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; }
+    .about-copy { padding: 8px 0; }
+    .about-copy h3 { font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -0.05em; margin: 0 0 14px; }
+    .about-copy p { margin: 0 0 18px; color: var(--muted); font-size: 1rem; }
+    .check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+    .check-list li { display: flex; align-items: flex-start; gap: 12px; color: var(--ink-soft); font-weight: 700; }
     .check-icon {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: #dffaf0;
-      color: #157a54;
-      font-size: 0.82rem;
-      flex-shrink: 0;
-      margin-top: 2px;
+      width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: #dffaf0; color: #157a54; font-size: 0.82rem; flex-shrink: 0; margin-top: 2px;
     }
 
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 22px;
-    }
-
+    .portfolio-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 22px; }
     .feature-card {
-      position: relative;
-      border-radius: 26px;
-      overflow: hidden;
-      background: #182a33;
-      min-height: 430px;
-      box-shadow: var(--shadow);
+      position: relative; border-radius: 26px; overflow: hidden; background: #17272d; min-height: 430px; box-shadow: var(--shadow);
     }
-    .feature-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 430px;
-      object-fit: cover;
-    }
+    .feature-card img { width: 100%; height: 100%; min-height: 430px; object-fit: cover; }
     .feature-badge {
-      position: absolute;
-      left: 18px;
-      bottom: 18px;
-      background: rgba(255,255,255,0.94);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-weight: 800;
+      position: absolute; left: 18px; bottom: 18px; background: rgba(255,255,255,0.95); color: var(--ink); padding: 10px 14px; border-radius: 12px; font-weight: 800;
     }
-
-    .mini-grid {
-      display: grid;
-      gap: 22px;
-    }
+    .mini-grid { display: grid; gap: 22px; }
     .mini-card {
-      min-height: 204px;
-      border-radius: 26px;
-      padding: 28px;
-      color: var(--white);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      background: linear-gradient(135deg, #1a2a36, #0c7582);
-      box-shadow: var(--shadow);
+      min-height: 204px; border-radius: 26px; padding: 28px; color: var(--white); display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(135deg, #1a2a36, #0c7582); box-shadow: var(--shadow);
     }
-    .mini-card:nth-child(2) { background: linear-gradient(135deg, #2b2d34, #8a6a0e); }
-    .mini-card h3 { margin: 0 0 8px; font-size: clamp(1.5rem, 2vw, 2rem); }
+    .mini-card:nth-child(2) { background: linear-gradient(135deg, #2a2c33, #8a6a0e); }
+    .mini-card h3 { margin: 0 0 8px; font-size: clamp(1.5rem, 2vw, 2rem); letter-spacing: -0.04em; }
     .mini-card p { margin: 0; color: rgba(255,255,255,0.8); }
 
-    .cta {
-      background: #101b22;
-      color: #fff;
-      border-radius: 28px;
-      padding: 32px 36px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      box-shadow: var(--shadow);
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .step {
+      background: var(--white); border-top: 4px solid var(--gold); border-radius: 0 0 20px 20px; padding: 26px 24px; box-shadow: 0 12px 24px rgba(15, 23, 32, 0.05);
     }
-    .cta h2 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.8rem); }
-    .cta p { margin: 0; color: #d7e5eb; }
+    .step b { color: var(--teal); font-size: 2.1rem; line-height: 1; letter-spacing: -0.05em; }
+    .step h3 { margin: 12px 0 8px; font-size: 1.2rem; }
+    .step p { margin: 0; color: var(--muted); }
+
+    .testimonials { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .quote {
+      background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 24px 22px; box-shadow: 0 10px 22px rgba(17, 24, 29, 0.04);
+    }
+    .quote p { margin: 0 0 18px; color: var(--ink-soft); font-size: 1rem; }
+    .author { display: flex; align-items: center; gap: 12px; }
+    .avatar {
+      width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #ffd863); display: grid; place-items: center; font-weight: 900; color: var(--ink);
+    }
+    .author strong { display: block; font-size: 0.96rem; }
+    .author small { color: var(--muted); }
+
+    .cta-wrap {
+      display: flex; justify-content: space-between; align-items: center; gap: 24px; background: #101b22; border-radius: 30px; padding: 36px 40px; color: var(--white); box-shadow: var(--shadow);
+    }
+    .cta-wrap h2 { margin: 0 0 8px; letter-spacing: -0.05em; font-size: clamp(1.8rem, 3vw, 2.8rem); }
+    .cta-wrap p { margin: 0; color: #cfe0e6; }
+
+    .contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 30px; margin-top: 34px; }
+    .contact-info { padding: 10px 0; }
+    .contact-info h3 { margin: 0 0 12px; font-size: clamp(1.8rem, 2vw, 2.5rem); letter-spacing: -0.05em; }
+    .contact-info p { color: var(--muted); margin: 0 0 20px; }
+    .contact-line { padding: 15px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+    .contact-line strong { display: block; color: var(--ink); margin-bottom: 5px; }
+
+    form {
+      background: var(--white); border: 1px solid var(--line); border-radius: 26px; padding: 26px; box-shadow: 0 16px 30px rgba(17, 24, 29, 0.05);
+    }
+    form h3 { margin: 0 0 20px; font-size: 1.5rem; letter-spacing: -0.04em; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    label { display: block; font-size: 0.85rem; font-weight: 800; margin-bottom: 7px; color: var(--ink-soft); }
+    input, select, textarea {
+      width: 100%; margin-bottom: 16px; padding: 13px 14px; border: 1px solid #dbe5ea; border-radius: 12px; background: #fbfdfe; color: var(--ink);
+    }
+    textarea { min-height: 128px; resize: vertical; }
+
+    footer { background: #0a1217; color: #dfeaf0; padding: 22px 0; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-row small { color: #9db6c0; }
 
     @media (max-width: 900px) {
-      .hero-grid, .about-grid, .portfolio-grid { grid-template-columns: 1fr; }
-      .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .cta { flex-direction: column; align-items: flex-start; }
+      nav { display: none; position: absolute; top: 78px; left: 0; right: 0; padding: 18px 5%; background: rgba(255,255,255,0.98); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 16px; }
+      nav.open { display: flex; }
+      .menu-toggle { display: block; }
+      .nav .btn { display: none; }
+      .hero-grid, .about-grid, .portfolio-grid, .contact-grid { grid-template-columns: 1fr; }
+      .services, .steps, .testimonials { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .cta-wrap { flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 560px) {
-      .services { grid-template-columns: 1fr; }
-      .hero { padding-top: 40px; }
+      .services, .stats, .steps, .testimonials, .field-row { grid-template-columns: 1fr; }
+      .hero { padding-top: 54px; }
+      .section { padding: 62px 0; }
+      .cta-wrap { padding: 28px 22px; }
+      .brand { font-size: 0.98rem; }
       .floating-card { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="J.K SignMaker'S home">
+        <div class="logo">J<span>K</span></div>
+        <span>J.K SignMaker'S</span>
+      </a>
+
+      <nav id="nav">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-primary">Get a Quote</a>
+      <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+
   <main>
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Custom signage • Metro Manila</div>
           <h1>We build signs that make your brand <span>impossible to ignore.</span></h1>
-          <p>J.K SignMaker'S creates custom signage, acrylic lettering, illuminated displays, and storefront branding designed for businesses that want to stand out.</p>
+          <p>J.K SignMaker'S creates custom signage, acrylic lettering, illuminated displays, and storefront branding designed to help businesses stand out in busy streets and retail spaces.</p>
+
           <div class="hero-actions">
             <a href="#contact" class="btn btn-primary">Request a Quote ↗</a>
             <a href="#portfolio" class="btn btn-light">View Portfolio</a>
           </div>
+
+          <div class="trust-row">
+            <span>✓ Bespoke design</span>
+            <span>✓ Fast turnaround</span>
+            <span>✓ Metro Manila coverage</span>
+          </div>
         </div>
 
         <div class="hero-visual">
-          <img src="assets/portfolio-sign.svg" alt="Premium custom signage mockup" />
+          <img src="assets/portfolio-sign.svg" alt="J.K SignMaker'S signage portfolio showcase" onerror="this.style.display='none'" />
           <div class="floating-card">
             <div>
               <strong>Brand visibility that sells.</strong>
-              <small>Luxury signage for businesses.</small>
+              <small>Custom-made signage for businesses.</small>
             </div>
             <a href="#contact" class="btn btn-primary">Let's Talk</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="stats">
+          <div class="stat"><strong>100+</strong><span>Projects completed</span></div>
+          <div class="stat"><strong>8+</strong><span>Years of service</span></div>
+          <div class="stat"><strong>24/7</strong><span>Brand visibility</span></div>
+          <div class="stat"><strong>100%</strong><span>Custom fabrication</span></div>
         </div>
       </div>
     </section>
@@ -350,25 +323,16 @@
       <div class="container">
         <div class="section-head">
           <h2>Signage solutions built for real business needs.</h2>
-          <p>From storefront branding to illuminated displays, we design with clarity, quality, and impact.</p>
+          <p>From storefront branding to illuminated promotions, we create signage that matches your identity and business goals.</p>
         </div>
 
         <div class="services">
-          <article class="service">
-            <div class="service-icon">💡</div>
-            <h3>Lighted Signage</h3>
-            <p>Illuminated signs that keep your business visible even at night.</p>
-          </article>
-          <article class="service">
-            <div class="service-icon">🔠</div>
-            <h3>Acrylic Letters</h3>
-            <p>Premium lettering for storefronts, offices, and commercial spaces.</p>
-          </article>
-          <article class="service">
-            <div class="service-icon">📦</div>
-            <h3>Light Boxes</h3>
-            <p>Custom light boxes designed to stand out with crisp branding.</p>
-          </article>
+          <article class="service"><div class="service-icon">💡</div><h3>Lighted Signage</h3><p>Illuminated signs that keep your business visible even at night and in high-traffic areas.</p></article>
+          <article class="service"><div class="service-icon">🔠</div><h3>Acrylic Letters</h3><p>Clean, durable lettering for stores, offices, lobbies, and professional commercial spaces.</p></article>
+          <article class="service"><div class="service-icon">📦</div><h3>Light Boxes</h3><p>Single-face or double-face light boxes designed to stand out with crisp and bold graphics.</p></article>
+          <article class="service"><div class="service-icon">🏬</div><h3>Storefront Signs</h3><p>Custom entrance signs, fascia panels, and branding elements made for modern retail spaces.</p></article>
+          <article class="service"><div class="service-icon">🖨️</div><h3>Panaflex & Print</h3><p>Large-format printed signage, banners, and promotional materials for launches and campaigns.</p></article>
+          <article class="service"><div class="service-icon">✂️</div><h3>Vinyl Graphics</h3><p>Window vinyl, wall graphics, and branding details that sharpen your visual presence.</p></article>
         </div>
       </div>
     </section>
@@ -378,13 +342,14 @@
         <div class="about-card">
           <img src="assets/portfolio-sign.svg" alt="Custom signage fabrication by J.K SignMaker'S" />
         </div>
+
         <div class="about-copy">
           <h3>Good signage is more than decoration — it is your first impression.</h3>
-          <p>We help businesses create memorable signage that reflects their identity, strengthens trust, and attracts the right customers.</p>
+          <p>We help businesses create memorable signage that reflects their identity, strengthens trust, and attracts the right customers. Every piece is designed with attention to material quality, readability, and installation impact.</p>
           <ul class="check-list">
-            <li><span class="check-icon">✓</span> Custom design based on your business and space</li>
+            <li><span class="check-icon">✓</span> Custom design recommendations based on your business and space</li>
             <li><span class="check-icon">✓</span> Durable materials for indoor and outdoor commercial use</li>
-            <li><span class="check-icon">✓</span> Personalized quotes based on size, finish, and installation</li>
+            <li><span class="check-icon">✓</span> Personalized quotes according to size, finish, and installation needs</li>
           </ul>
         </div>
       </div>
@@ -394,7 +359,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Recent work that speaks for itself.</h2>
-          <p>Our signage is designed to be clear, premium, and highly visible.</p>
+          <p>Whether it is a retail storefront, office branding, or illuminated display, we design with clarity and impact in mind.</p>
         </div>
 
         <div class="portfolio-grid">
@@ -404,30 +369,93 @@
           </div>
 
           <div class="mini-grid">
-            <article class="mini-card">
-              <h3>Acrylic Letters</h3>
-              <p>Dimensional lettering that adds premium polish to any business.</p>
-            </article>
-            <article class="mini-card">
-              <h3>Illuminated Displays</h3>
-              <p>High visibility signage that captures attention day and night.</p>
-            </article>
+            <article class="mini-card"><h3>Acrylic Letters</h3><p>Dimensional lettering that adds premium polish to any front office or storefront.</p></article>
+            <article class="mini-card"><h3>Illuminated Displays</h3><p>High-visibility signage that captures attention day and night.</p></article>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="process">
+      <div class="container">
+        <div class="section-head">
+          <h2>How we work with you.</h2>
+          <p>Simple, clear, and collaborative from the first inquiry to final installation.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step"><b>01</b><h3>Send your idea</h3><p>Share your concept, reference image, size requirement, location, and materials preference.</p></article>
+          <article class="step"><b>02</b><h3>Get a quote</h3><p>We assess your requirements and prepare a project quotation based on your needs and scope.</p></article>
+          <article class="step"><b>03</b><h3>Produce & install</h3><p>Once approved, we move to fabrication, scheduling, and final installation with care.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Trusted by businesses that value visibility.</h2>
+          <p>Clients choose us for craftsmanship, consistency, and signage that helps their brand stay memorable.</p>
+        </div>
+
+        <div class="testimonials">
+          <article class="quote"><p>“The façade sign gave our shop a much more professional look. The design was exactly what we wanted.”</p><div class="author"><div class="avatar">A</div><div><strong>Alex M.</strong><small>Retail Business</small></div></div></article>
+          <article class="quote"><p>“They were responsive, patient, and helped us choose the best signage to fit our budget and brand.”</p><div class="author"><div class="avatar">R</div><div><strong>Rina T.</strong><small>Restaurant Owner</small></div></div></article>
+          <article class="quote"><p>“The quality of the acrylic lettering and finishing looked premium and made a real difference.”</p><div class="author"><div class="avatar">J</div><div><strong>John C.</strong><small>Office Space</small></div></div></article>
         </div>
       </div>
     </section>
 
     <section class="section section-soft" id="contact">
       <div class="container">
-        <div class="cta">
+        <div class="cta-wrap">
           <div>
             <h2>Ready to build your next sign?</h2>
             <p>Tell us what you need and we’ll help you pick the right signage for your space.</p>
           </div>
           <a href="mailto:j.ksignmakers@gmail.com?subject=Signage%20Quotation%20Inquiry" class="btn btn-primary">Email Us ↗</a>
         </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Let’s talk about your project.</h3>
+            <p>For a faster quotation, include the desired signage type, size, quantity, and installation location.</p>
+
+            <div class="contact-line"><strong>Email</strong>j.ksignmakers@gmail.com</div>
+            <div class="contact-line"><strong>Mobile / Viber</strong>0991 179 1732</div>
+            <div class="contact-line"><strong>Service Area</strong>Quezon City & Metro Manila</div>
+          </div>
+
+          <form id="quoteForm">
+            <h3>Request a quotation</h3>
+            <div class="field-row">
+              <div><label for="name">Your name</label><input id="name" required placeholder="Name" /></div>
+              <div><label for="phone">Contact number</label><input id="phone" placeholder="Mobile / Viber" /></div>
+            </div>
+            <label for="type">Signage type</label>
+            <select id="type">
+              <option>Lighted signage</option>
+              <option>Acrylic build-up letters</option>
+              <option>Light box</option>
+              <option>Storefront signage</option>
+              <option>Panaflex / printed sign</option>
+              <option>Vinyl graphics</option>
+              <option>Other / not sure yet</option>
+            </select>
+            <label for="details">Project details</label>
+            <textarea id="details" placeholder="Tell us about your signage needs..."></textarea>
+            <button type="submit" class="btn btn-primary">Send Inquiry</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2025 J.K SignMaker'S</div>
+      <small>Custom signage • Acrylic letters • Lighted signs</small>
+    </div>
+  </footer>
 </body>
 </html>
