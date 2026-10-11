@@ -4,10 +4,6 @@
   const nav = document.getElementById('mainNav');
   const menuToggle = document.querySelector('.menu-toggle');
 
-  const config = {
-    backendUrl: window.QUOTE_BACKEND_URL || window.GOOGLE_SCRIPT_WEBAPP_URL || ''
-  };
-
   function setMessage(text, type) {
     messageBox.textContent = text;
     messageBox.className = 'form-message ' + type;
@@ -36,13 +32,13 @@
 
       if (field.type === 'checkbox') {
         if (!field.checked) {
-          return `Please confirm the required consent checkbox before submitting.`;
+          return 'Please confirm the required consent checkbox before submitting.';
         }
         continue;
       }
 
       if (!field.value.trim()) {
-        return `Please complete the required field: ${field.previousElementSibling?.textContent || 'the form'}`;
+        return 'Please fill out all required fields.';
       }
     }
 
@@ -62,9 +58,9 @@
     return `JK-${stamp}-${random}`;
   }
 
-  function buildPayload() {
+  function buildEmailBody() {
+    const refNum = buildReferenceNumber();
     const data = {
-      referenceNumber: buildReferenceNumber(),
       customerName: document.getElementById('customerName').value.trim(),
       contactNumber: document.getElementById('contactNumber').value.trim(),
       emailAddress: document.getElementById('emailAddress').value.trim(),
@@ -77,47 +73,38 @@
       completionDate: document.getElementById('completionDate').value,
       projectLocation: document.getElementById('projectLocation').value.trim(),
       projectDescription: document.getElementById('projectDescription').value.trim(),
-      referenceLink: document.getElementById('referenceLink').value.trim(),
-      submittedAt: new Date().toISOString()
+      referenceLink: document.getElementById('referenceLink').value.trim()
     };
 
-    return data;
+    const subject = encodeURIComponent(`Quotation Request - ${data.customerName} [${refNum}]`);
+    const body = encodeURIComponent(
+      `Reference Number: ${refNum}\n` +
+      `Submitted: ${new Date().toLocaleString()}\n\n` +
+      `CUSTOMER DETAILS:\n` +
+      `Name: ${data.customerName}\n` +
+      `Contact Number: ${data.contactNumber}\n` +
+      `Email: ${data.emailAddress}\n` +
+      `Project Location: ${data.projectLocation}\n\n` +
+      `SIGNAGE REQUIREMENTS:\n` +
+      `Type: ${data.signageType}\n` +
+      `Width: ${data.width}\n` +
+      `Height: ${data.height}\n` +
+      `Lighted/Non-lighted: ${data.lighting}\n` +
+      `Installation Required: ${data.installation}\n` +
+      `Estimated Budget: ${data.budget}\n` +
+      `Target Completion Date: ${data.completionDate}\n\n` +
+      `PROJECT DESCRIPTION:\n` +
+      `${data.projectDescription}\n\n` +
+      `Reference Image/Link:\n` +
+      `${data.referenceLink || '(None provided)'}\n\n` +
+      `---\n` +
+      `This quotation request was submitted via the J.K SignMaker'S website.`
+    );
+
+    return { subject, body };
   }
 
-  async function submitToBackend(payload) {
-    if (!config.backendUrl) {
-      throw new Error(
-        'The quotation backend is not configured yet. Please add your deployed Google Apps Script Web App URL before using the live form.'
-      );
-    }
-
-    const response = await fetch(config.backendUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
-
-    const text = await response.text();
-    let json;
-
-    try {
-      json = text ? JSON.parse(text) : {};
-    } catch (error) {
-      json = {};
-    }
-
-    if (!response.ok) {
-      const backendMessage = json?.message || json?.error || 'Submission failed. Please try again.';
-      throw new Error(backendMessage);
-    }
-
-    return json;
-  }
-
-  form.addEventListener('submit', async function (event) {
+  form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const validationError = validateForm();
@@ -126,28 +113,16 @@
       return;
     }
 
-    const payload = buildPayload();
-    const submitButton = form.querySelector('button[type="submit"]');
+    const { subject, body } = buildEmailBody();
+    const mailtoLink = `mailto:j.ksignmakers@gmail.com?subject=${subject}&body=${body}`;
 
-    submitButton.disabled = true;
-    submitButton.textContent = 'Submitting...';
-    setMessage('', '');
+    setMessage('Opening your email app to send the quotation request...', 'success');
+    window.location.href = mailtoLink;
 
-    try {
-      const result = await submitToBackend(payload);
-      const reference = result.referenceNumber || payload.referenceNumber;
-      setMessage(
-        result.message || `Your quotation request was submitted successfully. Reference: ${reference}`,
-        'success'
-      );
+    setTimeout(() => {
       form.reset();
-    } catch (error) {
-      const message = error.message || 'Something went wrong while submitting your request.';
-      setMessage(message, 'error');
-    } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = 'Submit request';
-    }
+      setMessage('', '');
+    }, 500);
   });
 
   if (menuToggle) {
@@ -163,20 +138,5 @@
         menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
-  }
-
-  const backendInstructions = `
-    Configuration required for live quotation submission:
-    1) Deploy a Google Apps Script Web App for your Google Sheet.
-    2) Set window.QUOTE_BACKEND_URL = 'https://script.google.com/macros/s/.../exec';
-    3) Keep credentials only in the backend, never in frontend code.
-  `;
-
-  if (!config.backendUrl) {
-    setMessage(
-      'Live backend is not configured yet. Add your deployed Google Apps Script URL to complete live request submission.',
-      'error'
-    );
-    console.info(backendInstructions);
   }
 })();
