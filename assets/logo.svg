@@ -1,0 +1,20 @@
+<svg width="560" height="560" viewBox="0 0 560 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">J.K SignMaker'S logo</title>
+  <desc id="logoDesc">Black circular badge with gold border and white letters spelling J.K SignMaker'S with gold highlight and tagline.</desc>
+  <defs>
+    <linearGradient id="goldStroke" x1="32" y1="24" x2="520" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9D55A"/>
+      <stop offset="0.5" stop-color="#F5B700"/>
+      <stop offset="1" stop-color="#D89E00"/>
+    </linearGradient>
+  </defs>
+  <circle cx="280" cy="280" r="260" fill="#0B0D10"/>
+  <circle cx="280" cy="280" r="246" stroke="url(#goldStroke)" stroke-width="28"/>
+
+  <g>
+    <text x="280" y="245" text-anchor="middle" font-family="Arial Black, Segoe UI, sans-serif" font-size="170" font-weight="900" fill="#FFFFFF" letter-spacing="-10">JK</text>
+    <path d="M179 298C220 286 252 287 277 291C311 296 359 314 397 337" stroke="url(#goldStroke)" stroke-width="20" stroke-linecap="round"/>
+    <text x="280" y="355" text-anchor="middle" font-family="Arial Black, Segoe UI, sans-serif" font-size="72" font-weight="900" fill="#FFFFFF" letter-spacing="-2">SignMaker'S</text>
+    <text x="280" y="420" text-anchor="middle" font-family="Verdana, Arial, sans-serif" font-size="22" font-weight="700" fill="#F5B700" letter-spacing="2">YOUR SIGN. YOUR BRAND. OUR CRAFT.</text>
+  </g>
+</svg>
